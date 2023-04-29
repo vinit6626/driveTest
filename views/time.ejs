@@ -1,0 +1,58 @@
+<!-- Vinit Mohanbhai Dabhi - 8804874 -->
+<%- include("partials/header.ejs") -%>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+    <a class="navbar-brand links" href="/driveTest/home">Book DriveTest</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="dashnav" href="/driveTest/home">DESHBOARD</a>
+         
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="g2nav" href="/driveTest/g2">G2_TEST</a>
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="gnav" href="/driveTest/g" >G_TEST</a>
+        </li>
+        <li class="nav-item notDriver" style="display: <%= notVisible %>;">
+            <a class="nav-link"  id="gnav" href="/driveTest/appointment" >APPOINTMENT</a>
+          </li>
+        <li class="nav-item" style="display: <%= notVisible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/login" >LOGIN</a>
+          </li>
+          <li class="nav-item" style="display: <%= visible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/logout">LOGOUT</a>
+          </li>
+      </ul>
+  </nav>
+  
+<h3 class="text-center" style="margin-top: 20px;">Select Timing For Your G Test </h3>
+<div class="container text-center" style="margin-top: 40px; padding: 20px 0px; " >
+  <% if(timing.length>0){%>
+
+  <form action="/driveTest/timing" method="post" class="form-horizontal">
+    <!-- <label for="timeSlot">Select Time Slot</label> -->
+  <select name="timeSlot" id="timeSlot" style="width: 20%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; line-height: 1.5; color: #495057;background-color: #fff; background-clip: padding-box; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; margin-left: 20px;">
+    <% for(let i=0; i<timing.length; i++){%> 
+      <option value="<%= timing[i] %>" name="timeslot"><%= timing[i] %></option>
+      <!-- <a href="/driveTest/timing/<%= timingId[i] %>" class="btn btn-danger" value="<%= timingId[i] %>"><%= timing[i] %></a> -->
+
+      <!-- <a href="/driveTest/timing/<%= timingId[i] %>" class="btn btn-primary" onclick="sendData('<%= timingId[i] %>', '<%= timing[i] %>')"><%= timing[i] %></a> -->
+
+      <button id="myButton" class="btn btn-danger" value="<%= timingId[i] %>"><%= timing[i] %></button>
+
+    <%}%>
+  </select>
+  <!-- <br> -->
+  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
+  </form>
+  <%}else{%>
+    <h2>Not Available Any Time Slot</h2>
+    <%}%>
+
+</div>
+
+
+</body>
+</html>

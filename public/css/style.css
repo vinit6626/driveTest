@@ -1,0 +1,208 @@
+/* Home page css start */
+.dashboard{
+  height: 400px;
+  text-align: center;
+  width: 100%;
+}
+.heading1, .heading4{
+color: white;
+text-align: center;
+}
+.heading1{
+padding-top: 100px;
+font-size: 4.5rem;
+font-weight: bold;
+}
+.heading4{
+padding: 7px;
+}
+.nav-item{
+  padding: 7px 15px;
+  color: white;
+}
+.containerwhite{
+width: 70%;
+margin: 7% 17%;
+}
+#dashnav, #g2nav, #gnav, #loginnav, .white{
+ color: white;
+}
+ .b-none{
+  border: none;
+}
+.steps{
+  /* background-color: #1E5128; */
+  background-color: #346751;
+  height: 250px;
+}
+.roadMap{
+  color: white;
+  padding: 20px;
+}
+.mTop{
+  margin-top: 20px;
+}
+.red:hover {
+  background-color: red;
+}
+.yellow:hover{
+  background-color: yellow;
+}
+.green:hover{
+  background-color: green;
+}
+
+/* Home page css end */
+
+
+
+
+
+
+/* Login page CSS Start */
+.head1{
+  color: #343a40;
+text-align: center;
+padding-top: 50px;
+font-size: 3.5rem;
+font-weight: bold;
+}
+
+.login {
+  margin-top: 6%;
+}
+
+input[type=text] {
+  width: 70%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=date] {
+  width: 70%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=number] {
+  width: 70%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.Signupform{
+  width: 100%;
+}
+body{
+  background-color: #343a40;
+}
+.padding04{
+padding: 0% 4%;
+}
+.center{
+text-align: center;
+}
+.submit{
+position: relative;
+width: 35%;
+height: 40px;
+background-color: #343a40;
+color: white;
+text-align: center;
+margin: 0% auto;
+border-radius: 35px;
+}
+.submit{
+margin: auto;
+}
+
+.submit:hover{
+  background-color: green;
+}
+.form-group select {
+  /* Adjust the styles below to fit your design */
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group select:focus {
+  /* Adjust the styles below to fit your design */
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Login page CSS end */
+
+
+
+
+/* Footer Start */
+footer{
+  background-color: #343a40;
+  color: white;
+  height: 200px;
+}
+.footerInfo{
+  line-height: 7px;
+}
+hr{
+  border: 1px solid white;
+  width: 40%;
+}
+.copyright{
+  text-decoration: none;
+  color: #7E7474;
+  text-align: center;
+}
+/* footer end */
+
+
+
+/* g2 page start */
+
+.userForm{
+  margin: 60px 200px;
+}
+#submit{
+  margin-top: 10px;
+}
+.mb10{
+  margin-bottom: 20px;
+}
+span, sub{
+  color: rgba(255, 0, 0, 0.626);
+}
+
+/* g2 page end */
+
+
+/* G page start */
+.display{
+  margin:10px;
+}
+.margin{
+  margin:20px 0px;
+}
+
+/* G page end */
+
+
+/* update page start */
+.disabled_item{
+  background-color: rgba(128, 128, 128, 0.201);
+}
+/* update page end */
+

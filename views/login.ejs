@@ -1,0 +1,124 @@
+<!-- Vinit Mohanbhai Dabhi - 8804874 -->
+<%- include("partials/header.ejs") -%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+  <a class="navbar-brand links" href="/driveTest/home">Book DriveTest</a>
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link" id="dashnav" href="/driveTest/home">DESHBOARD</a>
+       
+      </li>
+      <li class="nav-item notDriver" style="display: <%= visible %>;">
+        <a class="nav-link"  id="g2nav" href="/driveTest/g2">G2_TEST</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= visible %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/g" >G_TEST</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= visible %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/appointment" >APPOINTMENT</a>
+      </li>
+      <li class="nav-item" style="display: <%= notVisible %>;">
+          <a class="nav-link" id="loginnav" href="/driveTest/login" >LOGIN</a>
+        </li>
+        <li class="nav-item" style="display: <%= visible %>;">
+          <a class="nav-link" id="loginnav" href="/driveTest/logout">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
+
+
+  <div class="container login mb-5">
+    <p style="color:<%= color%>;" class="text-center"><%= msg %></p>
+
+    <div class="row">
+      <!-- login -->
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form name="myForm" action="/driveTest/register_user" method="post" class="container userForm"  onsubmit ="return validateForm()">
+              <h3 class="card-title center mb-4"><b>Sign up</b></h3>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">User Name</label>
+                <input type="email" class="form-control padding04" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" name="email" required placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control padding04" id="exampleInputPassword1"
+                  placeholder="Password" name="password" required min="8">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword2">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2"
+                  placeholder="Password" min="8" required name="c_password">
+                  <span id = "message2" style="color:red"> </span> 
+              </div>
+              <div class="form-group">
+                <label for="UserType">User Type</label>
+                <select name="UserType" id="UserType">
+                  <option value="Driver">Driver</option>
+                  <option value="Examiner">Examiner</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+              <p class="text-center">
+
+              <button type="submit" class="btn btn-primary">Sign up</button>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- login end -->
+      <!-- sign up  -->
+
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form name="myForm" action="/driveTest/user_verification" method="post" class="container userForm">
+              <h3 class="card-title center mb-4"><b>Login</b></h3>
+
+              <div class="form-group">
+                <label for="exampleInputEmail2">User Name</label>
+                <input type="email" class="form-control padding04" id="exampleInputEmail2"
+                  aria-describedby="emailHelp" name="email" required placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control padding04" id="exampleInputPassword3"
+                  placeholder="Password" name="password" required min="8">
+              </div>
+              <div class="form-group">
+                <label for="UserType">User Type</label>
+                <select name="UserType" id="UserType">
+                  <option value="Driver">Driver</option>
+                  <option value="Examiner">Examiner</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+              <p class="text-center">
+
+              <button type="submit" class="btn btn-primary">Login</button>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </body>
+<script>
+  function validateForm(){
+    var pw1 = document.getElementById("exampleInputPassword1").value;  
+    var pw2 = document.getElementById("exampleInputPassword2").value;  
+
+    if(pw1 != pw2) {  
+        document.getElementById("message2").innerHTML = "**Passwords are not same";  
+        return false;  
+      } else {  
+        return true;
+      }  
+  }
+</script>
+  <%- include("partials/footer.ejs") -%>

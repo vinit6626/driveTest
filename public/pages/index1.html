@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Dashboard</title>
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <style>
+      .dashboard{
+    height: 400px;
+    text-align: center;
+    width: 100%;
+}
+.heading1, .heading4{
+  color: white;
+  text-align: center;
+}
+.heading1{
+  padding-top: 100px;
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+.heading4{
+  padding: 7px;
+}
+.nav-item{
+    padding: 7px 15px;
+    color: white;
+}
+.containerwhite{
+  width: 70%;
+  margin: 7% 20%;
+}
+ #dashnav, #g2nav, #gnav, #loginnav{
+   color: white;
+}
+    </style>
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+        <a class="navbar-brand links" href="#">Book DriveTest</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" id="dashnav" href="http://localhost:3004/dashboard">DESHBOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="g2nav" href="http://localhost:3004/g2">G2_TEST</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="gnav" href="http://localhost:3004/g">G_TEST</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="loginnav" href="http://localhost:3004/login">LOGIN</a>
+              </li>
+          </ul>
+      </nav>
+      <!-- navbar end -->
+      <!-- dashboard container -->
+      <div class="dashboard bg-dark">
+        <div class="headingDiv">    
+            <h1 class="heading1">Dashboard</h1>
+            <h4 class="heading4">DriveTest Booking Kiosk</h4>
+          </div>
+      </div>
+      <!-- white container -->
+      <div class="containerwhite">
+        <h1 class="containerH1">You can book G2/G drive test from Kiosk</h1>
+        <h4 >You can book G2/G drive test from this Kiosk</h4>
+        <p>Posted by <strong>DriveTest Center</strong></p>
+      </div>
+</body>
+</html>

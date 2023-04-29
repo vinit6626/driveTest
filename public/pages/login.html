@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Portal</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        .login {
+            margin-top: 10%;
+        }
+
+        input[type=text], input[type=password] {
+            width: 70%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .Signupform{
+            width: 100%;
+        }
+        body{
+            background-color: #343a40;
+        }
+        .padding04{
+          padding: 0% 4%;
+        }
+        .center{
+          text-align: center;
+        }
+        .submit{
+          position: relative;
+          width: 35%;
+          height: 40px;
+          background-color: green;
+          color: white;
+          text-align: center;
+          margin: 0% auto;
+        }
+        .submit{
+          margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+      <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+        <a class="navbar-brand links" href="#">Book DriveTest</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" id="dashnav" href="http://localhost:3004/dashboard">DESHBOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="g2nav" href="http://localhost:3004/g2">G2_TEST</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="gnav" href="http://localhost:3004/g">G_TEST</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="loginnav" href="http://localhost:3004/login">LOGIN</a>
+              </li>
+          </ul>
+      </nav>
+      <!-- navbar end -->
+    <div class="container login">
+    <div class="row">
+      <!-- login -->
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title center">Sign up</h5>
+              <label for="uname" class="padding04"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" class="padding04" required>
+              
+              <label for="psw" class="padding04"><b>Password. </b></label>
+              <input type="password" placeholder="Enter Password" name="psw" class="padding04" required>
+
+              <label for="psw" class="padding04"><b>Mobile No.</b></label>
+              <input type="text" placeholder="Enter Mobile Number" name="mno" class="padding04" required>
+
+              <label for="psw" class="padding04"><b>Birth Date</b></label>
+              <input type="text" placeholder="MM/DD/YYYY" name="dob" class="padding04" required>
+              <button type="submit" class="submit">Sign up</button>
+            </div>
+          </div>
+        </div>
+        <!-- login end -->
+        <!-- sign up  -->
+        <div class="col-sm-6">
+       
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title center">Sign up</h5>
+              <label for="uname" class="padding04"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" class="padding04" required>
+              
+              <label for="psw" class="padding04"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" class="padding04" required>
+              <button type="submit" class="submit">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!-- Vinit Mohanbhai Dabhi - 8804874 -->
+<%- include("partials/header.ejs") -%>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+    <a class="navbar-brand links" href="/driveTest/home">Book DriveTest</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="dashnav" href="/driveTest/home">DESHBOARD</a>
+         
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="g2nav" href="/driveTest/g2">G2_TEST</a>
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="gnav" href="/driveTest/g" >G_TEST</a>
+        </li>
+        <li class="nav-item notDriver" style="display: <%= notVisible %>;">
+            <a class="nav-link"  id="gnav" href="/driveTest/appointment" >APPOINTMENT</a>
+          </li>
+        <li class="nav-item" style="display: <%= notVisible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/login" >LOGIN</a>
+          </li>
+          <li class="nav-item" style="display: <%= visible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/logout">LOGOUT</a>
+          </li>
+      </ul>
+  </nav>
+    <!-- dashboard container start -->
+    <div class="dashboard bg-dark">
+        <div class="headingDiv">
+            <h1 class="heading1">
+                G Test
+            </h1>
+            <h4 class="heading4">DriveTest Booking Kiosk</h4>
+        </div>
+    </div>
+   
+    <% if( details.fName=="default" ){ details.fName="" ; }else{ details.fName=details.fName; } %>
+
+    <% if( details.lName=="default" ){ details.lName="" ; }else{ details.lName=details.lName; } %>
+
+    <% if( details.age=='0' ){ details.age="" ; }else{ details.age=details.age; } %>
+
+    <% if( details.dob=='0' ){ details.dob="" ; }else{ details.dob=details.dob; } %>
+    
+    <% if( details.license=='default' ){ details.license="" ; }else{ details.license=details.license; } %>
+
+    <% if( details.carCompany=="default" ){ details.carCompany="" ; }else{ details.carCompany=details.carCompany; } %>
+
+    <% if( details.carModel=='default' ){ details.carModel="" ; }else{ details.carModel=details.carModel; } %>
+
+    <% if( details.plateNumber=='default' ){ details.plateNumber="" ; }else{ details.plateNumber=details.plateNumber; } %>
+
+    <% if( details.carYear=='0' ){ details.carYear="" ; }else{ details.carYear=details.carYear; } %>
+
+    <!-- dashboard container end -->
+<!-- license search start -->
+<!-- 
+    <div class="container userForm">
+            <h3 class="mb10" style="margin: 0px 41%;">Get Your Details </h3>
+            <form name="myForm" action="/driveTest/GetG2Data" method="post" class="container userForm ">
+                <div class="col-sm-8" style="margin: 0px 26%;">
+                    <label for="bknamelbl" class="form-label"></label>
+                    <input type="text" name="staticLNumber" class="form-control text-center" id="staticLNumber" placeholder="Enter License Number" >
+                    <span id="lNumber_error" style="margin-left: 60px;"></span>
+                </div>
+                <div class="col-sm-4" style="margin: 0px 45%;">
+                    <input type="submit" name="submit" id="submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div> -->
+
+<!-- license search end -->
+<h3 class="text-center" style="margin-top: 20px;">Before Booking G Confirm Your Information </h3>
+<div style="display:block">
+    <form name="myForm" action="/driveTest/bookGappointment/<%= details._id%>" method="post" class="container userForm">
+        <h3 >User Information </h3>
+        <h5 class="mb10"><sub></sub></h5>
+        <div class="form-group row mt10">
+            <label for="staticFirstName" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control-plaintext" id="staticFirstName"
+                    name="fName" placeholder="Enter First Name" disabled value="<%= details.fName %>" style="background-color: rgba(128, 128, 128, 0.201);">
+                <span id="fname_error"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticLastName" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-6">
+                <input type="text" name="lName" id="staticLastName"
+                    placeholder="Enter Last Name" value="<%= details.lName %>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                <span id="lname_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="text" name="email"  id="staticEmail"
+                    placeholder="Enter Email address"  value="<%= details.email %>"   style="background-color: rgba(128, 128, 128, 0.214);">
+                <span id="email_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticAge" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-6">
+                <input type="text" name="age" class="form-control-plaintext" id="staticAge"
+                    placeholder="Enter Age " value="<%= details.age %>"  disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                <span id="age_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticDOB" class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-6">
+                <input type="text"  name="dob"  id="staticDOB"
+                    placeholder="DD/MM/YYYY" value="<%= details.dob %>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                <span id="dob_error"></span>
+
+            </div>
+        </div>
+        <!-- <div class="form-group row">
+            <label for="staticLNumber" class="col-sm-2 col-form-label">License Number</label>
+            <div class="col-sm-6">
+                <input type="text" name="license"  id="staticLNumber"
+                    placeholder="Enter License Number" value="<%= details.license %>" disabled style="background-color: rgba(128, 128, 128, 0.214);" disabled>
+                <span id="lNumber_error"></span>
+
+            </div>
+        </div> -->
+        <h3 class="mb10">Car Information</h3>
+        <div class="form-group row mt10">
+            <label for="staticCarCompany" class="col-sm-2 col-form-label"> Car Company</label>
+            <div class="col-sm-6">
+                <input type="text" name="carCompany"  id="staticCarCompany"
+                    placeholder="Enter Car Company" value="<%= details.carCompany %>" style="background-color: rgba(128, 128, 128, 0.201);" disabled>
+                <span id="cCompany_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticCarModel" class="col-sm-2 col-form-label">Model</label>
+            <div class="col-sm-6">
+                <input type="text" name="carModel" id="staticCarModel"
+                    placeholder="Enter Car Model" value="<%= details.carModel %>" style="background-color: rgba(128, 128, 128, 0.201);" disabled>
+                <span id="cModel_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticPlateNumber" class="col-sm-2 col-form-label">Plate Number</label>
+            <div class="col-sm-6">
+                <input type="text" name="plateNumber"  id="staticPlateNumber"
+                    placeholder="Enter Plate Number" value="<%= details.plateNumber %>" style="background-color: rgba(128, 128, 128, 0.201);" disabled>
+                <span id="pNumber_error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticPlateNumber" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-6">
+                <input type="number" name="carYear"  id="carYear"
+                    placeholder="Enter Plate Number"  min="1950" value="<%= details.carYear %>"max="2023"style="background-color: rgba(128, 128, 128, 0.201); border: 1px solid rgba(128, 128, 128, 0.518); width: 70%; height: 50px; margin-bottom: 18px; border-radius: 3px;" disabled >
+                <span id="year_error"></span>
+            </div>
+        </div>
+        <% if(details.appointment_date == "default" && details.appointment_time == "default"){ %>
+            <div class="form-group row">
+                <label for="examType" style="margin-left:13px;">Exam Type</label>
+                <div class="col-sm-6">
+                    <select name="examType" id="ExamType" style="
+                    width: 70%;
+                    margin-left: 100px; margin-bottom: 15px;">
+                    <option value="G">G</option>
+                    <option value="G2">G2</option>
+                    </select>
+                </div>
+            </div>
+        <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Select Exam Date</label>
+            <div class="col-sm-6">
+                <input type="date" name="date"  id="date">
+                <span id="pNumber_error"></span>
+            </div>
+        </div>
+        <% }else{ %>
+            <div class="form-group row">
+                <label for="appointment_date" class="col-sm-2 col-form-label">Exam Type</label>
+                <div class="col-sm-6">
+                    <label for="appointment_time" class="col-sm-4 col-form-label"><%= details.exam_type%></label>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="appointment_date" class="col-sm-2 col-form-label">Exam Date</label>
+                <div class="col-sm-6">
+                    <label for="appointment_time" class="col-sm-4 col-form-label"><%= details.appointment_date%></label>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="appointment_time" class="col-sm-2 col-form-label">Exam Time</label>
+                <div class="col-sm-6">
+                <label for="appointment_time" class="col-sm-4 col-form-label"><%= details.appointment_time%></label>
+                </div>
+            </div>
+            <% if(details.result == "PASS"){ %>
+                <div class="form-group row">
+                    <label for="appointment_time" class="col-sm-2 col-form-label">Comments by Examiner</label>
+                    <div class="col-sm-6">
+                    <label for="appointment_time" class="col-sm-12 col-form-label"><%= details.comment%></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                      <div class="card mt-5">
+                        <div class="card-header">
+                          <h3 class="text-center">Driving License</h3>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="/images/user.jpeg" alt="Profile Picture" class="img-fluid mb-3">
+                              <p class="text-center"><%=details.fName%>, <%= details.lName%></p>
+                            </div>
+                            <div class="col-md-6">
+                              <ul class="list-group">
+                                  <li class="list-group-item">Age:  <%= details.age%></li>
+                                  <li class="list-group-item">D.O.B: <%= details.dob %></li>
+                                  <li class="list-group-item">Issue Date:  <%= details.appointment_date%></li>
+                                  <li class="list-group-item">Expiry: 2028-08-22 </li>
+                                  <li class="list-group-item">Class: <%= details.exam_type %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <p class="text-center">This license is only valid for Photo ID.</p>
+                          <p class="text-center">Original license will deliver to your address soon.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <% }else if(details.result == "Fail"){ %>
+                <div class="form-group row">
+                    <label for="appointment_time" class="col-sm-2 col-form-label">Comments by Examiner</label>
+                    <div class="col-sm-6">
+                    <label for="appointment_time" class="col-sm-12 col-form-label"><%= details.comment%></label>
+                    </div>
+                </div>
+                <h3>You are fail, Better Luck Next Time</h3>
+            <% } %>
+        <% } %>
+        <% if(details.fName != "" && details.lName != "" && details.age != "" && details.dob != "" && details.carCompany != "" && details.appointment_date == "default" && details.appointment_time == "default" ){ %>
+           
+            <div class="form-group row">
+                <label for="staticCarModel" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-2">
+                    <input type="submit" class="btn btn-primary" id="submit"
+                    onclick="return validateForm()">
+                </div>
+            </div>
+            <%}else{%>
+                 <% if(details.appointment_date == "default" && details.appointment_time == "default"){ %>
+
+                    <a href="/driveTest/g2">Click here and update your details</a>
+                <%}%>
+            <%}%>
+    </form>
+</div>
+
+   
+
+<script type="text/javascript">
+    window.onload=function(){
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("date")[0].setAttribute('min', today);
+    }
+
+      </script> 
+    <%- include("partials/footer.ejs") -%>

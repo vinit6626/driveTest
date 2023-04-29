@@ -1,0 +1,249 @@
+<!-- Vinit Mohanbhai Dabhi - 8804874 -->
+<%- include("partials/header.ejs") -%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+    <a class="navbar-brand links" href="/driveTest/home">Book DriveTest</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="dashnav" href="/driveTest/home">DESHBOARD</a>
+         
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="g2nav" href="/driveTest/g2">G2_TEST</a>
+        </li>
+        <li class="nav-item notDriver" style="display: <%= visible %>;">
+          <a class="nav-link"  id="gnav" href="/driveTest/g" >G_TEST</a>
+        </li>
+        <li class="nav-item" style="display: <%= notVisible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/login" >LOGIN</a>
+          </li>
+          <li class="nav-item" style="display: <%= visible %>;">
+            <a class="nav-link" id="loginnav" href="/driveTest/logout">LOGOUT</a>
+          </li>
+      </ul>
+  </nav>
+
+  
+
+
+    <!-- dashboard container start -->
+    <div class="dashboard bg-dark">
+        <div class="headingDiv">
+            <h1 class="heading1">
+                Update
+            </h1>
+            <h4 class="heading4">DriveTest Booking Kiosk</h4>
+        </div>
+    </div>
+    <!-- dashboard container end -->
+       
+
+        <div style="display:block">
+            <form name="myForm" action="/driveTest/update/<%= details[0]._id%>" method="post" class="container userForm">
+                <h3 >User Information </h3>
+                <h5 class="mb10"><sub>All credentials are mandatory.</sub></h5>
+                
+                <div class="form-group row mt10">
+                    <label for="staticFirstName" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control-plaintext" id="staticFirstName"
+                            name="fName" placeholder="Enter First Name"  value="<%= details[0].fName%>"  disabled style="background-color: rgba(128, 128, 128, 0.201);">
+                        <span id="fname_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticLastName" class="col-sm-2 col-form-label">Last Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="lName" id="staticLastName"
+                            placeholder="Enter Last Name" value="<%= details[0].lName%>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                        <span id="lname_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="email"  id="staticEmail"
+                            placeholder="Enter Email address" value="<%= details[0].email%>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                        <span id="email_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticAge" class="col-sm-2 col-form-label">Age</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="age" class="form-control-plaintext" id="staticAge"
+                            placeholder="Enter Age " value="<%= details[0].age%>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                        <span id="age_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticDOB" class="col-sm-2 col-form-label">Date of Birth</label>
+                    <div class="col-sm-6">
+                        <input type="text"  name="dob"  id="staticDOB"
+                            placeholder="DD/MM/YYYY" value="<%= details[0].dob%>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                        <span id="dob_error"></span>
+    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticLNumber" class="col-sm-2 col-form-label">License Number</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="license"  id="staticLNumber"
+                            placeholder="Enter License Number" value="<%= details[0].license%>" disabled style="background-color: rgba(128, 128, 128, 0.214);">
+                        <span id="lNumber_error"></span>
+    
+                    </div>
+                </div>
+                <h3 class="mb10">Car Information</h3>
+                <div class="form-group row mt10">
+                    <label for="staticCarCompany" class="col-sm-2 col-form-label"> Car Company</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="carCompany"  id="staticCarCompany"
+                            placeholder="Enter Car Company" value="<%= details[0].carCompany%>">
+                        <span id="cCompany_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticCarModel" class="col-sm-2 col-form-label">Model</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="carModel" id="staticCarModel"
+                            placeholder="Enter Car Model" value="<%= details[0].carModel%>">
+                        <span id="cModel_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticPlateNumber" class="col-sm-2 col-form-label">Plate Number</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="plateNumber"  id="staticPlateNumber"
+                            placeholder="Enter Plate Number" value="<%= details[0].plateNumber%>">
+                        <span id="pNumber_error"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticPlateNumber" class="col-sm-2 col-form-label">Year</label>
+                    <div class="col-sm-6">
+                        <input type="number" name="carYear"  id="carYear"
+                            placeholder="Enter Plate Number" value="<%= details[0].carYear%>" min="1950" max="2023"style="border: 1px solid rgba(128, 128, 128, 0.518); width: 70%; height: 50px; margin-bottom: 18px; border-radius: 3px;">
+                        <span id="year_error"></span>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="staticCarModel" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-primary" id="submit"
+                            onclick="return validateForm()">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+    
+  
+    <script>
+        function validateForm() {
+            const emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
+            var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+
+            let fName = document.getElementById("staticFirstName").value;
+            let lName = document.getElementById("staticLastName").value;
+            let email = document.getElementById("staticEmail").value;
+            let age = document.getElementById("staticAge").value;
+            let dob = document.getElementById("staticDOB").value;
+            let lNumber = document.getElementById("staticLNumber").value;
+            let cCompany = document.getElementById("staticCarCompany").value;
+            let cModel= document.getElementById("staticCarModel").value;
+            let pNumber= document.getElementById("staticPlateNumber").value;
+            let cYear= document.getElementById("carYear").value;
+
+            let lNumberLength = lNumber.length;
+            let validateAge = parseInt(age);
+
+            if (fName == "") 
+            {
+                document.getElementById("fname_error").innerHTML = "First Name must be filled out";
+                document.getElementById("staticFirstName").focus();
+                return false;
+            }
+            else if (lName == "") 
+            {
+                document.getElementById("lname_error").innerHTML = "Last Name must be filled out";
+                document.getElementById("staticLastName").focus();
+
+                return false;
+            } else if (email == "") 
+            {
+                document.getElementById("email_error").innerHTML = "Email must be filled out";
+                document.getElementById("staticEmail").focus();
+                return false;
+            } else if (!emailPattern.test(email)) 
+            {
+                
+                document.getElementById("email_error").innerHTML = "Must be valid email address";
+                document.getElementById("staticEmail").focus();
+
+                return false;
+            } else if (age == "") 
+            {document.getElementById("age_error").focus();
+                document.getElementById("age_error").innerHTML = "Age must be in integer";
+                document.getElementById("staticAge").focus();
+                return false;
+            } else if (isNaN(validateAge)) 
+            {
+                document.getElementById("age_error").innerHTML = "Age should be in integer";
+                document.getElementById("staticAge").focus();
+                return false;
+            }
+            else if (dob == "") 
+            {
+                document.getElementById("dob_error").innerHTML = "Date must be filled out";
+                document.getElementById("staticDOB").focus();
+                return false;
+            } else if (!dateformat.test(dob))				
+            {
+                document.getElementById("dob_error").innerHTML = "Must be valid formate (DD/MM/YYYY)";
+                document.getElementById("staticDOB").focus();
+                return false;
+            }else if (lNumber == "") 
+            {
+                document.getElementById("lNumber_error").innerHTML = "License number must be filled out";
+                document.getElementById("staticLNumber").focus();
+                return false;
+            }else if (lNumberLength < 8) 
+            {
+                document.getElementById("lNumber_error").innerHTML = "License number should be 8 alpha numeric";
+                document.getElementById("staticAge").focus();
+                return false;
+            }else if (cCompany == "") 
+            {
+                document.getElementById("cCompany_error").innerHTML = "Car company must be filled out";
+                document.getElementById("staticCarCompany").focus();
+                return false;
+            }else if (cModel == "")
+             {
+                document.getElementById("cModel_error").innerHTML = "Car model must be filled out";
+                document.getElementById("staticCarModel").focus();
+                return false;
+            }else if (pNumber == "") 
+            {
+                document.getElementById("pNumber_error").innerHTML = "Plate number must be filled out";
+                document.getElementById("staticPlateNumber").focus();
+                return false;
+            }else if (cYear == "") 
+            {
+                document.getElementById("year_error").innerHTML = "Plate number must be filled out";
+                document.getElementById("cYear").focus();
+                return false;
+            }
+            
+           
+
+        }
+    </script>
+    <!-- form end -->
+    <%- include("partials/footer.ejs") -%>

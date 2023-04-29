@@ -1,0 +1,108 @@
+<!-- Vinit Mohanbhai Dabhi - 8804874 -->
+
+<%- include("partials/header.ejs") -%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between px-5">
+  <a class="navbar-brand links" href="/driveTest/home">Book DriveTest</a>
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link" id="dashnav" href="/driveTest/home">DESHBOARD</a>
+       
+      </li>
+      <li class="nav-item notDriver" style="display: <%= driver %>;">
+        <a class="nav-link"  id="g2nav" href="/driveTest/g2">G2_TEST</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= driver %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/g" >G_TEST</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= admin %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/appointment" >APPOINTMENT</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= admin %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/vendor" >VENDOR</a>
+      </li>
+      <li class="nav-item notDriver" style="display: <%= examiner %>;">
+        <a class="nav-link"  id="gnav" href="/driveTest/drivertest" >DRIVER EXAM</a>
+      </li>
+      <li class="nav-item" style="display: <%= notVisible %>;">
+          <a class="nav-link" id="loginnav" href="/driveTest/login" >LOGIN</a>
+        </li>
+        <li class="nav-item" style="display: <%= visible %>;">
+          <a class="nav-link" id="loginnav" href="/driveTest/logout">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
+
+
+      <!-- dashboard container -->
+      <div class="dashboard bg-dark" id="dashboardHome">
+        <div class="headingDiv">    
+            <h1 class="heading1"> Dashboard</h1>
+            
+            <h4 class="heading4">DriveTest Booking Kiosk</h4>
+          </div>
+      </div>
+      <!-- white containers start -->
+      <div class="containerwhite">
+        <h3 class="text-center" style="color:<%= color%>; margin-bottom: 30px"> <%= name %></h3>
+          <h1 class="containerH1">You can book G2/G drive test from Kiosk</h1>
+          <h4 >You can book G2/G drive test from this Kiosk</h4>
+        <p>Posted by <strong>DriveTest Center</strong></p>
+      </div>
+      <!-- white containers end -->
+      <!-- steps start -->
+      <div class="steps mb-5">
+        <div class="container text-center">
+          <h2 class="roadMap">Road Map to Get Full G License</h2>
+          <div class="row text-center">
+
+            <div class="col-sm-4 mt-4 white">
+              <h2>Step 1</h2>
+              <p>Book appointment, complete your G1 test at our center.</p>
+            </div>
+            <div class="col-sm-4 mt-4 white">
+              <h2>Step 2</h2>
+              <p>Once completing G1 test, book your G2 road test.</p>
+            </div>
+            <div class="col-sm-4 mt-4 white">
+              <h2>Step 3</h2>
+              <p>After completing G2, finish your G and get your full G license.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- steps end -->
+      <!-- 3 vehicle card start -->
+      <div class="container">
+      <div class="row px-5">
+        <div class="col-sm-4 text-center">
+          <div class="card red">
+            <div class="card-body">
+              <h5 class="card-title "><i class="fa-solid fa-motorcycle fa-5x "></i></h5>
+              <h4 class="my-4">Motorcycles</h4>
+              <p class="card-text">Driver examination and licensing requirements for cars, van and trucks..</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 text-center">
+            <div class="card yellow">
+              <div class="card-body">
+                <h5 class="card-title text-center"><i class="fa-solid fa-car-side fa-5x"></i></h5>
+                <h4 class="my-4">Cars</h4>
+                <p class="card-text">Driver examination and licensing requirements for motorcycles, scooters, and mopeds…</p>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 text-center">
+          <div class="card green">
+            <div class="card-body">
+              <h5 class="card-title text-center"><i class="fa-solid fa-truck-moving fa-5x"></i></h5>
+              <h4 class="my-4">Commercial</h4>
+              <p class="card-text">Driver examination and licensing requirements for classes A, B, C, D, E, F, or Z (trucks and buses)…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- vehicle card end -->
+</body>
+<%- include("partials/footer.ejs") -%>
